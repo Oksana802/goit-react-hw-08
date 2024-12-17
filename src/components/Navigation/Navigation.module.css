@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .linkHeader {
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 2px 2px 0 rgb(128, 128, 128);
+  }
+  .active {
+    color: red;
+  }
+}
