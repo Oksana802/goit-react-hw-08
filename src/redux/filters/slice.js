@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "",
+  query: "",
 };
 
 const filterSlice = createSlice({
@@ -9,7 +9,7 @@ const filterSlice = createSlice({
   initialState,
   reducers: {
     changeFilter: (state, action) => {
-      state.name = action.payload;
+      state.query = action.payload.trim();
     },
   },
 });
