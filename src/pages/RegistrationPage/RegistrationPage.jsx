@@ -4,6 +4,9 @@ import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import s from "./RegistrationPage.module.css";
+import successImage from "../../assets/go-1.png";
+import treeImage from "../../assets/box-1.jpg";
 
 const RegistrationPage = () => {
   const dispatch = useDispatch();
@@ -36,32 +39,43 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-      >
-        <Form>
-          <label>
-            Name
-            <Field type="text" name="name" />
-            <ErrorMessage name="name" component="div" />
-          </label>
-          <label>
-            Email
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-          </label>
-          <label>
-            Password
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-          </label>
-          <button type="submit">Register</button>
-        </Form>
-      </Formik>
+    <div className={s.wrapper}>
+      <div>
+        <img src={treeImage} alt="Сhristmas wreath" />
+      </div>
+      <div className={s.box}>
+        <h2>Register</h2>
+        <Formik
+          onSubmit={handleSubmit}
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+        >
+          <Form>
+            <label className={s.label}>
+              Name
+              <Field className={s.input} type="text" name="name" />
+              <ErrorMessage name="name" component="div" />
+            </label>
+            <label className={s.label}>
+              Email
+              <Field className={s.input} type="email" name="email" />
+              <ErrorMessage name="email" component="div" />
+            </label>
+            <label className={s.label}>
+              Password
+              <Field className={s.input} type="password" name="password" />
+              <ErrorMessage name="password" component="div" />
+            </label>
+            <button className={s.btn} type="submit">
+              Register
+            </button>
+          </Form>
+        </Formik>
+      </div>
+
+      <div className={s.animatedImage}>
+        <img src={successImage} alt="Registration successful" />
+      </div>
     </div>
   );
 };

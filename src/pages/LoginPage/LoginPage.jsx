@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { login } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { Navigate } from "react-router-dom";
+import s from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -26,27 +27,32 @@ const LoginPage = () => {
     return <Navigate to="/contacts" />;
   }
   return (
-    <div>
-      <h2>Login</h2>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-      >
-        <Form>
-          <label>
-            Email
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-          </label>
-          <label>
-            Password
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-          </label>
-          <button type="submit">Log in</button>
-        </Form>
-      </Formik>
+    <div className={s.wrapper}>
+      <div className={s.box}>
+        <h2>Login</h2>
+        <Formik
+          onSubmit={handleSubmit}
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+        >
+          <Form>
+            <label className={s.label}>
+              Email
+              <Field className={s.input} type="email" name="email" />
+              <ErrorMessage name="email" component="div" />
+            </label>
+            <label className={s.label}>
+              Password
+              <Field className={s.input} type="password" name="password" />
+              <ErrorMessage name="password" component="div" />
+            </label>
+            <button className={s.btn} type="submit">
+              Log in
+            </button>
+          </Form>
+        </Formik>
+      </div>
+      <p>Who is first in line?</p>
     </div>
   );
 };

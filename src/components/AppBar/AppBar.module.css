@@ -1,11 +1,12 @@
-.box {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   min-height: 60px;
-  padding: 20px 40px;
-  background-color: rgb(129, 238, 171);
+  padding: 20px 20px;
+  margin-bottom: 10px;
+  background-color: rgb(209 60 23);
 
-  box-shadow: 0 2px 2px 0 rgb(128, 128, 128);
+  box-shadow: 0 2px 2px 0 rgb(96, 122, 24);
 }

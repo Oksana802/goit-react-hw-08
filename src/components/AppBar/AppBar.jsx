@@ -7,7 +7,7 @@ import s from "./AppBar.module.css";
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <header className={s.box}>
+    <header className={s.nav}>
       <Navigation />
       {isLoggedIn && <UserMenu />}
       {!isLoggedIn && <AuthNav />}

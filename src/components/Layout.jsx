@@ -4,7 +4,7 @@ import s from "./Layout.module.css";
 
 const Layout = () => {
   return (
-    <div className={s.wrapper}>
+    <div className={s.container}>
       <AppBar />
       <Outlet />
     </div>

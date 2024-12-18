@@ -5,15 +5,16 @@
   /* width: 100vw; */
   /* min-height: 60px; */
   padding: 10px 10px;
-  background-color: rgb(235, 247, 239);
-
-  box-shadow: 0 2px 2px 0 rgb(128, 128, 128);
+  /* background-color: rgb(235, 247, 239); */
 
   .linkAuth {
-    color: black;
+    padding: 4px;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 2rem;
     font-weight: 700;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgb(105, 1, 1);
   }
   .active {
     color: red;
