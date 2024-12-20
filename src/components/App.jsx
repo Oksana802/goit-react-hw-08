@@ -19,9 +19,24 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? null : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />}></Route>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute
+              component={<RegistrationPage />}
+              redirectTo="contacts"
+            />
+          }
+        ></Route>
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute component={<LoginPage />} redirectTo="contacts" />
+          }
+        ></Route>
         <Route
           path="contacts"
           element={
@@ -30,23 +45,8 @@ const App = () => {
             </PrivateRoute>
           }
         ></Route>
-      </Route>
-      <Route
-        path="register"
-        element={
-          <RestrictedRoute
-            component={<RegistrationPage />}
-            redirectTo="/contacts"
-          />
-        }
-      ></Route>
-      <Route
-        path="login"
-        element={
-          <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
-        }
-      ></Route>
-    </Routes>
+      </Routes>
+    </Layout>
   );
 };
 
