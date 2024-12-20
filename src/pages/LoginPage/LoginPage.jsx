@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import { login } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import s from "./LoginPage.module.css";
 import friends from "../../assets/ncontact.jpg";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
@@ -21,7 +23,14 @@ const LoginPage = () => {
       .required("Required"),
   });
   const handleSubmit = (values, options) => {
-    dispatch(login(values));
+    dispatch(login(values))
+      .unwrap()
+      .then(() => {
+        navigate(`/contacts`);
+      })
+      .catch(() => {
+        toast("try another email");
+      });
     options.resetForm();
   };
   if (isLoggedIn) {
