@@ -32,13 +32,13 @@ const ContactList = () => {
   const re = /^\d{10}$/;
   const OrderSchema = Yup.object({
     name: Yup.string()
-      .min(3, "мінімальна кількість символів - 3")
-      .max(20, "максимальна кількість символів - 20")
-      .required("Це поле є обов'язковим"),
+      .min(3, "Minimum length is 3 characters")
+      .max(20, "Maximum length is 20 characters")
+      .required("This field is required"),
     number: Yup.string()
-      .matches(re, "Тільки цифри -10 символів  ")
-      .max(10, "максимальна кількість символів - 10")
-      .required("Це поле є обов'язковим"),
+      .matches(re, "Only digits - 10 characters allowed")
+      .max(10, "Maximum length is 10 characters")
+      .required("This field is required"),
   });
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -59,8 +59,8 @@ const ContactList = () => {
   };
 
   return (
-    <div>
-      <ul>
+    <div className={s.wrapper_card_list}>
+      <ul className={s.box_card_list}>
         {contacts.map((contact) => (
           <Contact
             key={contact.id}
@@ -75,68 +75,65 @@ const ContactList = () => {
           isOpen={isModalOpen}
           onRequestClose={handleCloseModal}
           contentLabel="Edit Contact"
+          overlayClassName={s.modal_overlay}
+          className={s.modal_edit}
         >
-          <h2>Edit Contact</h2>
-          <Formik
-            validationSchema={OrderSchema}
-            onSubmit={handleUpdateContact}
-            initialValues={initialValues}
-          >
-            <Form className={s.form}>
-              <label className={s.label}>
-                <span>Name</span>
-                <Field
-                  className={s.input}
-                  type="text"
-                  name="name"
-                  autoFocus
-                  placeholder="Вкажіть Ім'я"
-                />
-                <ErrorMessage name="name" component="div" className={s.error} />
-              </label>
-              <label className={s.label}>
-                <span>Number</span>
-                <Field
-                  className={s.input}
-                  type="text"
-                  name="number"
-                  placeholder="Тільки цифри"
-                />
-                <ErrorMessage
-                  name="number"
-                  component="div"
-                  className={s.error}
-                />
-              </label>
-              <button type="submit">Save</button>
-              <button type="button" onClick={handleCloseModal}>
-                Cancel
-              </button>
-            </Form>
-          </Formik>
+          <div>
+            <h2 className={s.title_edit}>Edit Contact</h2>
+            <Formik
+              validationSchema={OrderSchema}
+              onSubmit={handleUpdateContact}
+              initialValues={initialValues}
+            >
+              <Form className={s.form}>
+                <label className={s.label}>
+                  <span className={s.span}>Name</span>
+                  <Field
+                    className={s.input}
+                    type="text"
+                    name="name"
+                    autoFocus
+                    placeholder="Enter name"
+                  />
+                  <ErrorMessage
+                    name="name"
+                    component="div"
+                    className={s.error}
+                  />
+                </label>
+                <label className={s.label}>
+                  <span className={s.span}>Number</span>
+                  <Field
+                    className={s.input}
+                    type="text"
+                    name="number"
+                    placeholder="Enter phone number"
+                  />
+                  <ErrorMessage
+                    name="number"
+                    component="div"
+                    className={s.error}
+                  />
+                </label>
+                <div className={s.box_btn}>
+                  <button type="submit" className={s.btn}>
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    className={s.btn}
+                    onClick={handleCloseModal}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </Form>
+            </Formik>
+          </div>
         </Modal>
       )}
     </div>
   );
 };
 
-export default ContactList; // import { useSelector } from "react-redux";
-// import Contact from "../Contact/Contact";
-// import s from "./ContactList.module.css";
-// import { selectFilteredContacts } from "../../redux/contacts/selectors";
-
-// const ContactList = () => {
-//   const contacts = useSelector(selectFilteredContacts);
-
-//   return (
-//     <div className={s.wrapper}>
-//       <ul className={s.card}>
-//         {contacts.map((contact) => (
-//           <Contact key={contact.id} {...contact} />
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default ContactList;
+export default ContactList;

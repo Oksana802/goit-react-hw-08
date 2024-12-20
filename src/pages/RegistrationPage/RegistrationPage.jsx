@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import s from "./RegistrationPage.module.css";
 import successImage from "../../assets/go-1.png";
-import treeImage from "../../assets/box-1.jpg";
+import treeImage from "../../assets/tree.jpg";
 
 const RegistrationPage = () => {
   const dispatch = useDispatch();
@@ -39,32 +39,36 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrapper_r}>
       <div>
-        <img src={treeImage} alt="Сhristmas wreath" />
+        <img className={s.tree} src={treeImage} alt="Сhristmas wreath" />
       </div>
-      <div className={s.box}>
+      <div className={s.box_r}>
         <h2>Register</h2>
         <Formik
           onSubmit={handleSubmit}
           initialValues={initialValues}
           validationSchema={validationSchema}
         >
-          <Form>
+          <Form className={s.form}>
             <label className={s.label}>
-              Name
+              <span> Name</span>
               <Field className={s.input} type="text" name="name" />
-              <ErrorMessage name="name" component="div" />
+              <ErrorMessage name="name" component="div" className={s.error} />
             </label>
             <label className={s.label}>
-              Email
+              <span>Email</span>
               <Field className={s.input} type="email" name="email" />
-              <ErrorMessage name="email" component="div" />
+              <ErrorMessage name="email" component="div" className={s.error} />
             </label>
             <label className={s.label}>
-              Password
+              <span>Password</span>
               <Field className={s.input} type="password" name="password" />
-              <ErrorMessage name="password" component="div" />
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={s.error}
+              />
             </label>
             <button className={s.btn} type="submit">
               Register

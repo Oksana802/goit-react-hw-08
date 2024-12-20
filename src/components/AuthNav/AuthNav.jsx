@@ -4,14 +4,14 @@ import s from "./AuthNav.module.css";
 const AuthNav = () => {
   return (
     <div className={s.box}>
-      <ul className={s.list}>
+      <div className={s.nav}>
         <NavLink className={s.linkAuth} to="/register">
           Register
         </NavLink>
         <NavLink className={s.linkAuth} to="/login">
           Login
         </NavLink>
-      </ul>
+      </div>
     </div>
   );
 };

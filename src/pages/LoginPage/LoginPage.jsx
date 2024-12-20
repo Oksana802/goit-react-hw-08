@@ -5,6 +5,7 @@ import { login } from "../../redux/auth/operations";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { Navigate } from "react-router-dom";
 import s from "./LoginPage.module.css";
+import friends from "../../assets/ncontact.jpg";
 
 const LoginPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -27,24 +28,28 @@ const LoginPage = () => {
     return <Navigate to="/contacts" />;
   }
   return (
-    <div className={s.wrapper}>
-      <div className={s.box}>
+    <div className={s.wrapper_l}>
+      <div className={s.box_log}>
         <h2>Login</h2>
         <Formik
           onSubmit={handleSubmit}
           initialValues={initialValues}
           validationSchema={validationSchema}
         >
-          <Form>
+          <Form className={s.form}>
             <label className={s.label}>
-              Email
+              <span>Email</span>
               <Field className={s.input} type="email" name="email" />
-              <ErrorMessage name="email" component="div" />
+              <ErrorMessage name="email" component="div" className={s.error} />
             </label>
             <label className={s.label}>
-              Password
+              <span>Password</span>
               <Field className={s.input} type="password" name="password" />
-              <ErrorMessage name="password" component="div" />
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={s.error}
+              />
             </label>
             <button className={s.btn} type="submit">
               Log in
@@ -52,7 +57,11 @@ const LoginPage = () => {
           </Form>
         </Formik>
       </div>
-      <p>Who is first in line?</p>
+      <p className={s.text}>
+        Who's the first on your list to connect with today? Let's get started
+        and make it happen!
+      </p>
+      <img src={friends} alt="Santa and his friends" />
     </div>
   );
 };

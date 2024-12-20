@@ -13,7 +13,6 @@ const ContactsPage = () => {
   }, [dispatch]);
   return (
     <div className={s.wrapper}>
-      <h2 className={s.title}>Contacts</h2>
       <div className={s.box}>
         <ContactForm />
         <div className={s.search}>

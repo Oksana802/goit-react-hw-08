@@ -1,17 +1,19 @@
-.wrapper {
+.wrapper_r {
   max-width: 320px;
   padding: 10px;
-  height: 100vh;
   margin: 0 auto;
-
   text-align: center;
 }
-.box {
+
+.tree {
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.box_r {
   width: 300px;
   padding: 10px;
-
   margin: 0 auto;
-
   text-align: center;
 }
 
@@ -29,32 +31,47 @@
   0% {
     top: 0;
     right: 0;
-    /* opacity: 0; */
+
     transform: scale(1);
   }
   100% {
     top: 80%;
     right: 100%;
-    /* opacity: 1; */
+
     transform: scale(1.8);
   }
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-  margin-top: 5px;
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
 }
-
 .label {
-  display: block;
-  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
 }
 
+.span {
+  font-weight: 500;
+  font-size: 16px;
+}
 .input {
-  width: 100%;
-  padding: 6px;
-  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.error {
+  position: absolute;
+  top: 110%;
+  left: 16px;
+  color: red;
+  font-size: 14px;
+  line-height: 1.1;
 }
 
 .btn {
@@ -80,14 +97,21 @@
   background-color: rgb(22, 110, 5);
 }
 @media screen and (min-width: 768px) {
-  .box {
-    max-width: 768px;
-    padding: 20px;
-    height: 100vh;
-    margin: 0 auto;
-    overflow: auto;
-    text-align: center;
+  .wrapper_r {
+    max-width: 700px;
+    padding: 10px;
   }
+
+  .tree {
+    width: 380px;
+  }
+  .box_r {
+    width: 400px;
+  }
+  .error {
+    font-size: 16px;
+  }
+
   .animatedImage {
     width: 120px;
     height: 120px;
@@ -96,25 +120,19 @@
     0% {
       top: 30%;
       right: 0;
-      /* opacity: 0; */
       transform: scale(1);
     }
     100% {
       top: 80%;
       right: 100%;
-      /* opacity: 1; */
       transform: scale(1.8);
     }
   }
 }
 @media screen and (min-width: 1158px) {
-  .box {
-    max-width: 1440px;
+  .box_r {
+    max-width: 700px;
     padding: 30px;
-    height: 100vh;
-    margin: 0 auto;
-    overflow: auto;
-    text-align: center;
   }
   .animatedImage {
     width: 150px;
@@ -124,13 +142,11 @@
     0% {
       top: 20%;
       right: 0;
-      /* opacity: 0; */
       transform: scale(1);
     }
     100% {
       top: 80%;
       right: 100%;
-      /* opacity: 1; */
       transform: scale(1.8);
     }
   }

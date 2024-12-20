@@ -14,13 +14,13 @@ const ContactForm = () => {
   const re = /^\d{10}$/;
   const OrderSchema = Yup.object({
     name: Yup.string()
-      .min(3, "мінімальна кількість символів - 3")
-      .max(20, "максимальна кількість символів - 20")
-      .required("Це поле є обов'язковим"),
+      .min(3, "Minimum length is 3 characters")
+      .max(20, "Maximum length is 20 characters")
+      .required("This field is required"),
     number: Yup.string()
-      .matches(re, "Тільки цифри -10 символів  ")
-      .max(10, "максимальна кількість символів - 10")
-      .required("Це поле є обов'язковим"),
+      .matches(re, "Only digits - 10 characters allowed")
+      .max(10, "Maximum length is 10 characters")
+      .required("This field is required"),
   });
 
   const handleSubmit = (values, options) => {
@@ -42,7 +42,7 @@ const ContactForm = () => {
               className={s.input}
               type="text"
               name="name"
-              placeholder="Вкажіть Ім'я"
+              placeholder="friend's name"
             />
             <ErrorMessage name="name" component="div" className={s.error} />
           </label>
@@ -52,7 +52,7 @@ const ContactForm = () => {
               className={s.input}
               type="text"
               name="number"
-              placeholder="Тільки цифри"
+              placeholder="telephone number"
             />
             <ErrorMessage name="number" component="div" className={s.error} />
           </label>

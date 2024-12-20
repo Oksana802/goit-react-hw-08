@@ -1,6 +1,5 @@
 .filter {
-  width: 60vw;
-  max-width: 300px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -8,9 +7,10 @@
 }
 
 .span {
-  color: rgb(247, 255, 240);
-  font-weight: 700;
   margin: 0 auto;
+  color: rgb(15, 0, 0);
+  text-shadow: 2px 2px 4px rgb(180, 233, 163);
+  font-weight: 700;
 }
 .input {
   min-height: 30px;
@@ -22,13 +22,11 @@
   font-size: 20px;
 }
 
-@media screen and (min-width: 768px) {
-  .filter {
-    max-width: 320px;
-  }
-}
 @media screen and (min-width: 1158px) {
+  .filter {
+    width: 400px;
+  }
   .span {
-    margin: 0;
+    font-size: 24px;
   }
 }

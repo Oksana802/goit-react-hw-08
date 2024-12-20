@@ -8,8 +8,8 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   return (
     <div>
-      <h2 className={s.title}>Welcome {user.email}</h2>
-      <button className={s.btn} onClick={() => dispatch(logout())}>
+      <h2 className={s.greeting}>Welcome {user.email}</h2>
+      <button className={s.logout} onClick={() => dispatch(logout())}>
         Logout
       </button>
     </div>

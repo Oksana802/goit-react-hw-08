@@ -13,7 +13,7 @@ const SearchBox = () => {
   return (
     <div>
       <label className={s.filter}>
-        <span className={s.span}>Find contacts by name</span>
+        <span className={s.span}>Find contacts by name/number</span>
         <input
           className={s.input}
           type="text"
