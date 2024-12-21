@@ -23,22 +23,22 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
-          path="register"
+          path="/register"
           element={
             <RestrictedRoute
               component={<RegistrationPage />}
-              redirectTo="contacts"
+              redirectTo="/contacts"
             />
           }
         ></Route>
         <Route
-          path="login"
+          path="/login"
           element={
             <RestrictedRoute component={<LoginPage />} redirectTo="contacts" />
           }
         ></Route>
         <Route
-          path="contacts"
+          path="/contacts"
           element={
             <PrivateRoute>
               <ContactsPage />
