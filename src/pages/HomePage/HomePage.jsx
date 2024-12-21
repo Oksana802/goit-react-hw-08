@@ -1,5 +1,12 @@
 import s from "./HomePage.module.css";
-import car from "../../assets/bg-1.jpg";
+
+import foto from "../../assets/bg-1.jpg";
+import foto2x from "../../assets/bg-2x.jpg";
+import fotoTab from "../../assets/bg-tab.jpg";
+import fotoTab2x from "../../assets/home-tab-2x.jpg";
+import fotoMob from "../../assets/bg-mob.jpg";
+import fotoMob2x from "../../assets/bg-mob-2x.jpg";
+
 const HomePage = () => {
   return (
     <div className={s.container}>
@@ -16,7 +23,34 @@ const HomePage = () => {
             ✨ Stay organized, make the season magical! ✨
           </li>
         </ul>
-        <img src={car} alt="Santa and his friends" />
+
+        <div>
+          <picture>
+            <source
+              srcSet={`${foto2x} 2x, ${foto} 1x`}
+              media="(min-width: 1158px)"
+              type="image/jpeg"
+            />
+
+            <source
+              srcSet={`${fotoTab2x} 2x, ${fotoTab} 1x`}
+              media="(min-width: 768px)"
+              type="image/jpeg"
+            />
+
+            <source
+              srcSet={`${fotoMob2x} 2x, ${fotoMob} 1x`}
+              media="(min-width: 320px)"
+              type="image/jpeg"
+            />
+            <img
+              src={fotoMob}
+              alt="Santa and his friends"
+              // width="300"
+              // height="256"
+            />
+          </picture>
+        </div>
       </div>
     </div>
   );

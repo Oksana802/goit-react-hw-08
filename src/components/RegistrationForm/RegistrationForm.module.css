@@ -1,13 +1,12 @@
 .wrapper_r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   max-width: 320px;
   padding: 10px;
   margin: 0 auto;
   text-align: center;
-}
-
-.tree {
-  min-width: 300px;
-  margin: 0 auto;
 }
 
 .box_r {
@@ -102,9 +101,6 @@
     padding: 10px;
   }
 
-  .tree {
-    width: 380px;
-  }
   .box_r {
     width: 400px;
   }

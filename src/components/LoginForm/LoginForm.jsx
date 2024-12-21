@@ -3,11 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import * as Yup from "yup";
 import { login } from "../../redux/auth/operations";
-import friends from "../../assets/ncontact.jpg";
 import { Navigate, useNavigate } from "react-router-dom";
 import s from "./LoginForm.module.css";
-
 import toast from "react-hot-toast";
+
+import foto from "../../assets/login-b.jpg";
+import foto2x from "../../assets/login-2x.jpg";
+import fotoTab from "../../assets/login-tab.jpg";
+import fotoTab2x from "../../assets/login-tab-2x.jpg";
+import fotoMob from "../../assets/login-mob.jpg";
+import fotoMob2x from "../../assets/login-mob-2x.jpg";
 
 const LoginForm = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -71,7 +76,33 @@ const LoginForm = () => {
         Who's the first on your list to connect with today? Let's get started
         and make it happen!
       </p>
-      <img src={friends} alt="Santa and his friends" />
+      <div>
+        <picture>
+          <source
+            srcSet={`${foto2x} 2x, ${foto} 1x`}
+            media="(min-width: 1158px)"
+            type="image/jpeg"
+          />
+
+          <source
+            srcSet={`${fotoTab2x} 2x, ${fotoTab} 1x`}
+            media="(min-width: 768px)"
+            type="image/jpeg"
+          />
+
+          <source
+            srcSet={`${fotoMob2x} 2x, ${fotoMob} 1x`}
+            media="(min-width: 320px)"
+            type="image/jpeg"
+          />
+          <img
+            src={fotoMob}
+            alt="Сhristmas wreath"
+            // width="300"
+            // height="256"
+          />
+        </picture>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,13 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import s from "./RegistrationForm.module.css";
 import successImage from "../../assets/go-1.png";
-import treeImage from "../../assets/tree.jpg";
+
+import foto from "../../assets/tree.jpg";
+import foto2x from "../../assets/tree-2x.jpg";
+import fotoTab from "../../assets/tree.jpg";
+import fotoTab2x from "../../assets/tree-2x.jpg";
+import fotoMob from "../../assets/tree-mob.jpg";
+import fotoMob2x from "../../assets/tree-mob-2x.jpg";
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -41,8 +47,33 @@ const RegistrationForm = () => {
   return (
     <div className={s.wrapper_r}>
       <div>
-        <img className={s.tree} src={treeImage} alt="Сhristmas wreath" />
+        <picture>
+          <source
+            srcSet={`${foto2x} 2x, ${foto} 1x`}
+            media="(min-width: 1158px)"
+            type="image/jpeg"
+          />
+
+          <source
+            srcSet={`${fotoTab2x} 2x, ${fotoTab} 1x`}
+            media="(min-width: 768px)"
+            type="image/jpeg"
+          />
+
+          <source
+            srcSet={`${fotoMob2x} 2x, ${fotoMob} 1x`}
+            media="(min-width: 320px)"
+            type="image/jpeg"
+          />
+          <img
+            src={fotoMob}
+            alt="Сhristmas wreath"
+            // width="300"
+            // height="256"
+          />
+        </picture>
       </div>
+
       <div className={s.box_r}>
         <h2>Register</h2>
         <Formik
@@ -78,7 +109,10 @@ const RegistrationForm = () => {
       </div>
 
       <div className={s.animatedImage}>
-        <img src={successImage} alt="Registration successful" />
+        <img
+          src={successImage}
+          alt="Finally, it's registration time—let's go!"
+        />
       </div>
     </div>
   );
