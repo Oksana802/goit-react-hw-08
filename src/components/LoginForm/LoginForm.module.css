@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  max-width: 320px;
+  /* max-width: 320px; */
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
 }
@@ -79,7 +80,7 @@
 
 @media screen and (min-width: 768px) {
   .wrapper_l {
-    max-width: 700px;
+    /* max-width: 700px; */
     padding: 10px;
   }
   .box_log {
@@ -96,7 +97,7 @@
 }
 @media screen and (min-width: 1158px) {
   .wrapper_l {
-    max-width: 1408px;
+    /* max-width: 1408px; */
     margin: 0 auto;
     padding: 30px;
   }

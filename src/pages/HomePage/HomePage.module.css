@@ -1,6 +1,7 @@
 .container {
   /* min-width: 320px;
   max-width: 360px; */
+  width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   overflow: auto;
@@ -11,7 +12,8 @@
   align-items: center;
 
   gap: 10px;
-  max-width: 300px;
+  /* max-width: 300px; */
+  width: 100%;
 
   margin: 0 auto;
   padding: 20px;
@@ -37,7 +39,8 @@
     padding: 0 14px;
   }
   .wrapper {
-    max-width: 740px;
+    /* max-width: 740px; */
+
     padding: 20px;
     gap: 20px;
   }
@@ -55,7 +58,7 @@
     padding: 0 16px;
   }
   .wrapper {
-    max-width: 1408px;
+    /* max-width: 1408px; */
     gap: 30px;
     margin: 0 auto;
     padding: 30px;
