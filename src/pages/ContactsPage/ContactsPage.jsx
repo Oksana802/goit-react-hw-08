@@ -12,12 +12,14 @@ const ContactsPage = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <div className={s.wrapper}>
-      <div className={s.box}>
-        <ContactForm />
-        <div className={s.search}>
-          <SearchBox />
-          <ContactList />
+    <div className={s.container}>
+      <div className={s.wrapper}>
+        <div className={s.box}>
+          <ContactForm />
+          <div className={s.search}>
+            <SearchBox />
+            <ContactList />
+          </div>
         </div>
       </div>
     </div>

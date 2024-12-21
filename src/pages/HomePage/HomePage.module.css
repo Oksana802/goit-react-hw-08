@@ -1,3 +1,10 @@
+.container {
+  min-width: 320px;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow: auto;
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -24,6 +31,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+
+    padding: 0 14px;
+  }
   .wrapper {
     max-width: 740px;
     padding: 20px;
@@ -37,6 +49,11 @@
 }
 
 @media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1440px;
+
+    padding: 0 16px;
+  }
   .wrapper {
     max-width: 1408px;
     gap: 30px;

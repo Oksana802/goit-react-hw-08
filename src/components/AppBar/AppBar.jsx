@@ -7,11 +7,14 @@ import s from "./AppBar.module.css";
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <header className={s.nav}>
-      <Navigation />
-      {isLoggedIn && <UserMenu />}
-      {!isLoggedIn && <AuthNav />}
-    </header>
+    <div className={s.container}>
+      {" "}
+      <header className={s.nav}>
+        <Navigation />
+        {isLoggedIn && <UserMenu />}
+        {!isLoggedIn && <AuthNav />}
+      </header>
+    </div>
   );
 };
 

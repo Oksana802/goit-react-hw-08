@@ -1,9 +1,8 @@
 import AppBar from "./AppBar/AppBar";
-import s from "./Layout.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className={s.container}>
+    <div>
       <AppBar />
       <main>{children}</main>
     </div>

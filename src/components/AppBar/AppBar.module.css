@@ -1,3 +1,10 @@
+.container {
+  min-width: 320px;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow: auto;
+}
 .nav {
   display: flex;
   align-items: center;
@@ -10,6 +17,11 @@
   box-shadow: 0 2px 2px 0 rgb(96, 122, 24);
 }
 @media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+
+    padding: 0 14px;
+  }
   .nav {
     width: 100%;
     padding: 10px 30px;
@@ -18,6 +30,11 @@
   }
 }
 @media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1440px;
+
+    padding: 0 16px;
+  }
   .nav {
     width: 100%;
     padding: 20px 40px;
