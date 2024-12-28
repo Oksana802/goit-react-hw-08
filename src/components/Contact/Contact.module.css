@@ -20,7 +20,7 @@
   align-items: baseline;
   padding: 2px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
 }
 .input:first-child {
   margin-bottom: 10px;
@@ -94,7 +94,7 @@
     height: 16px;
   }
   .input {
-    font-size: 18px;
+    font-size: 22px;
   }
   .btn {
     font-size: 18px;
@@ -113,7 +113,7 @@
   }
   .input {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
   }
   .btn {
     font-size: 20px;
