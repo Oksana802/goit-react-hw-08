@@ -11,11 +11,14 @@
   padding: 6px;
   text-align: start;
   border-radius: 4px;
-  border: 1px solid gray;
-  background-color: rgb(180, 233, 163);
-  box-shadow: -3px -3px 5px #ffffff, 3px 3px 5px #b3b3b3;
+  border: 1px solid rgba(194, 193, 193, 0.452);
+  background-color: #ffffff;
+  box-shadow: -3px -3px 5px #e4e1e1, 3px 3px 5px #b7b8b7;
 }
 .input {
+  display: flex;
+  align-items: center;
+  padding: 2px;
   font-weight: 500;
   font-size: 16px;
 }
@@ -23,11 +26,17 @@
   margin-bottom: 10px;
 }
 
-.icon {
+.icon_p {
   margin-right: 4px;
-
-  width: 16px;
-  height: 16px;
+  color: rgb(8, 163, 47);
+  width: 14px;
+  height: 14px;
+}
+.icon_t {
+  margin-right: 4px;
+  color: rgb(209 60 23);
+  width: 14px;
+  height: 14px;
 }
 
 .box_btn {
@@ -76,11 +85,11 @@
     width: 100%;
     padding: 10px;
   }
-  .icon {
+  .icon_p,
+  .icon_t {
     margin-right: 6px;
-
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   .input {
     font-size: 18px;
@@ -95,9 +104,10 @@
     flex-direction: row;
   }
 
-  .icon {
-    width: 20px;
-    height: 20px;
+  .icon_p,
+  .icon_t {
+    width: 18px;
+    height: 18px;
   }
   .input {
     font-weight: 600;

@@ -13,11 +13,11 @@ const Contact = ({ id, name, number, onEdit }) => {
       <li className={s.item}>
         <ul>
           <li className={s.input}>
-            <IoPersonSharp className={s.icon} />
+            <IoPersonSharp className={s.icon_p} />
             {name}
           </li>
           <li className={s.input}>
-            <FaPhone className={s.icon} />
+            <FaPhone className={s.icon_t} />
             {number}
           </li>
         </ul>
