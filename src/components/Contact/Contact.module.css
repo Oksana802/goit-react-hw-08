@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 280px;
+  width: 280px;
   gap: 30px;
   padding: 6px;
   text-align: start;
@@ -17,7 +17,7 @@
 }
 .input {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding: 2px;
   font-weight: 500;
   font-size: 16px;
@@ -31,12 +31,14 @@
   color: rgb(8, 163, 47);
   width: 14px;
   height: 14px;
+  flex-shrink: 0;
 }
 .icon_t {
   margin-right: 4px;
   color: rgb(209 60 23);
   width: 14px;
   height: 14px;
+  flex-shrink: 0;
 }
 
 .box_btn {
