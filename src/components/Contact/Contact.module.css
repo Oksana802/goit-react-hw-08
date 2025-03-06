@@ -39,8 +39,21 @@
   width: 14px;
   height: 14px;
   flex-shrink: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.icon_t:hover {
+  color: #007bff; /* Зміна кольору при наведенні */
+}
+.phone_link {
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.phone_link:hover {
+  color: #007bff; /* Зміна кольору при наведенні */
+}
 .box_btn {
   display: flex;
   flex-direction: column;

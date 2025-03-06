@@ -17,8 +17,12 @@ const Contact = ({ id, name, number, onEdit }) => {
             {name}
           </li>
           <li className={s.input}>
-            <FaPhone className={s.icon_t} />
-            {number}
+            <div className={s.telNumber}>
+              <a href={`tel:${number}`} className={s.phone_link}>
+                <FaPhone className={s.icon_t} />
+                {number}
+              </a>
+            </div>
           </li>
         </ul>
         <div className={s.box_btn}>
